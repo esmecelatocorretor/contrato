@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Contrato de Corretagem</title>
+</head>
+<body>
+    <h1>Gerador de Contrato de Corretagem de Imóveis</h1>
+    <form id="contractGenerator">
+        <label for="ownerName">Nome Completo do Proprietário:</label>
+        <input type="text" id="ownerName" required><br>
+
+        <label for="nationality">Nacionalidade:</label>
+        <input type="text" id="nationality" required><br>
+
+        <label for="maritalStatus">Estado Civil:</label>
+        <input type="text" id="maritalStatus" required><br>
+
+        <label for="occupation">Profissão:</label>
+        <input type="text" id="occupation" required><br>
+
+        <label for="rgNumber">Número do RG:</label>
+        <input type="text" id="rgNumber" required><br>
+
+        <label for="cpfNumber">Número do CPF:</label>
+        <input type="text" id="cpfNumber" required><br>
+
+        <label for="propertyAddressFull">Endereço Completo do Proprietário:</label>
+        <input type="text" id="propertyAddressFull" required><br>
+
+        <label for="propertyType">Tipo de Imóvel:</label>
+        <input type="text" id="propertyType" required><br>
+
+        <label for="propertyAddressFullImovel">Endereço Completo do Imóvel:</label>
+        <input type="text" id="propertyAddressFullImovel" required><br>
+
+        <label for="commission">Valor da Comissão:</label>
+        <input type="text" id="commission" required><br>
+
+        <label for="commissionValue">Valor da Comissão por Extenso:</label>
+        <input type="text" id="commissionValue" required><br>
+
+        <label for="exclusiveCommission">Valor da Comissão de Exclusividade:</label>
+        <input type="text" id="exclusiveCommission" required><br>
+
+        <label for="exclusiveCommissionValue">Valor da Comissão de Exclusividade por Extenso:</label>
+        <input type="text" id="exclusiveCommissionValue" required><br>
+
+        <label for="propertyValue">Valor do Imóvel:</label>
+        <input type="text" id="propertyValue" required><br>
+
+        <label for="propertyValueText">Valor do Imóvel por Extenso:</label>
+        <input type="text" id="propertyValueText" required><br>
+
+        <label for="signatureDate">Data da Assinatura:</label>
+        <input type="text" id="signatureDate" required><br>
+
+        <input type="submit" value="Gerar Contrato">
+    </form>
+    <h2>Contrato de Corretagem Gerado:</h2>
+    <pre id="generatedContract"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
