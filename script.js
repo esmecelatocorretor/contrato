@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const propertyValueText = document.getElementById('propertyValueText').value;
         const signatureDate = document.getElementById('signatureDate').value;
 
-        // Crie o contrato com base nos dados inseridos
-         const contractText = `    
+        const contractText = `    
 CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE
 IDENTIFICAÇÃO DAS PARTES CONTRATANTES
 Proprietário do Imóvel: ${ownerName}
@@ -38,7 +37,7 @@ Número do CPF: ${cpfNumber}
 Endereço Completo do Proprietário: ${ownerPropertyAddress}
 
 CORRETOR DE IMÓVEIS (CONTRATADO):
-EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis, inscrito no CRECI sob o nº 44.628 - 6ª Região/PR, Avaliador de Imóveis inscrito no CNA 47.536 -DF, Perido Judicial Habilitado junto ao TJPR, RG nº 1.650.923-0 SSP/PR, CPF nº 557.095.409-00, residente e domiciliado na Rua Francisco Rodrigues de Souza, 148, Centro, CEP 85.990-000, Terra Roxa – PR.
+EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis, inscrito no CRECI sob o nº 44.628 - 6ª Região/PR, Avaliador de Imóveis inscrito no CNA 47.536 -DF, Perito Judicial Habilitado junto ao TJPR, RG nº 1.650.923-0 SSP/PR, CPF nº 557.095.409-00, residente e domiciliado na Rua Francisco Rodrigues de Souza, 148, Centro, CEP 85.990-000, Terra Roxa – PR.
 As partes acima identificadas celebram o presente Contrato de Prestação de Serviços de Corretagem Imobiliária com Exclusividade, que será regido pelas cláusulas e condições seguintes.
 CLÁUSULA 1ª – DO OBJETO
 O presente contrato tem por objeto a prestação de serviços de corretagem imobiliária pelo CONTRATADO para oferta, promoção e intermediação da venda do imóvel de propriedade do CONTRATANTE.
@@ -81,36 +80,26 @@ O CONTRATANTE autoriza expressamente o CORRETOR a fotografar, filmar e divulgar 
 CLÁUSULA 18ª – DO FORO
 Para dirimir quaisquer dúvidas ou controvérsias oriundas do presente contrato, fica eleito o Foro da Comarca de Terra Roxa – PR, com renúncia expressa de qualquer outro, por mais privilegiado que seja.
 Terra Roxa – PR, ${signatureDate}.
+
 CONTRATANTE:
-
-
 ________________________________________
 Nome: ${ownerName}
+
 CORRETOR:
-
-
 ________________________________________
 EDSON VIANA ESMECELATO – CRECI 44.628
 TESTEMUNHAS:
-1.	Nome: _______________________ – CPF: ___________________
+1. Nome: _______________________ – CPF: ___________________
 
-2.	Nome: _______________________ – CPF: ___________________
-
-   `;
-//////////////////
-// Defina os estilos inline para o contrato, incluindo margens superior e inferior
-const contractWithStyles = `
-    <div style="font-family: Arial, sans-serif; font-size: 14px; text-align: justify; margin-left: 5cm; margin-right: 1cm; margin-top: 2cm; margin-bottom: 2cm;">
-        ${contractText}
-    </div>
+2. Nome: _______________________ – CPF: ___________________
 `;
 
-// Exiba o contrato gerado
-document.getElementById('generatedContract').innerHTML = contractWithStyles;
-//////////////////
-//        // Exiba o contrato gerado
-//       generatedContract.textContent = contractText;
-   }
-    });
+        const contractWithStyles = `
+        <div style="font-family: Arial, sans-serif; font-size: 14px; text-align: justify; margin-left: 5cm; margin-right: 1cm; margin-top: 2cm; margin-bottom: 2cm;">
+            ${contractText.replace(/\n/g, '<br>')}
+        </div>
+        `;
 
- 
+        generatedContract.innerHTML = contractWithStyles;
+    }
+});
