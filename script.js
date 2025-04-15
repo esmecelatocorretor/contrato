@@ -26,68 +26,77 @@ document.addEventListener('DOMContentLoaded', function () {
         const signatureDate = document.getElementById('signatureDate').value;
 
         // Crie o contrato com base nos dados inseridos
-         const contractText = `     
-               CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA
-IDENTIFICAÇÃO DAS PARTES CONTRATANTES:
-                Proprietário do Imóvel: ${ownerName}
-                Nacionalidade: ${nationality}
-                Estado Civil: ${maritalStatus}
-                Profissão: ${occupation}
-                Número do RG: ${rgNumber}
-                Número do CPF: ${cpfNumber}
-                Endereço Completo do Proprietário: ${ownerPropertyAddress}
+         const contractText = `    
+CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE
+IDENTIFICAÇÃO DAS PARTES CONTRATANTES
+Proprietário do Imóvel: ${ownerName}
+Nacionalidade: ${nationality}
+Estado Civil: ${maritalStatus}
+Profissão: ${occupation}
+Número do RG: ${rgNumber}
+Número do CPF: ${cpfNumber}
+Endereço Completo do Proprietário: ${ownerPropertyAddress}
 
-                CORRETOR: EDSON VIANA ESMECELATO, Brasileiro, Casado, Corretor de Imóveis Creci 44628, Carteira de Identidade nº 1.650.923-0 SSPPR, CPF Nº 557.095.409-00, capaz, residente e domiciliado na Rua Francisco Rodrigues de Souza, 148, Centro, CEP 85.990-000, Cidade de Terra Roxa, PR;
-
-As partes acima identificadas têm entre si justo e acertado o presente Contrato de Prestação de Serviços de Corretagem Imobiliária, que se regerá pelas cláusulas seguintes e pelas condições descritas no presente.
-DO OBJETO DO CONTRATO:
-Cláusula 1ª. O presente contrato tem como OBJETO a prestação de serviços de corretagem, especificamente para a oferta e negociação da venda do imóvel.
-DO IMÓVEL:
-Cláusula 2ª. O CONTRATANTE é possuidor do imóvel ${propertyType}, localizado no seguinte endereço: ${propertyAddressFull}.
-Cláusula 3ª. O imóvel objeto de venda será entregue livre e desembaraçado, ou seja, sem quaisquer ônus que possam impedir ou restringir transações. Para tanto, seguem anexas todas as certidões referentes à pessoa do CONTRATANTE e ao imóvel.
-Cláusula 4ª. Faz parte do presente também, os Documentos Necessários para Transferência ao(s) Comprador(es).
-DEVER DO CONTRATANTE:
-Cláusula 5ª. O CONTRATANTE se compromete a não negociar e/ou vender o imóvel no período em que estiver sob a responsabilidade de venda e negociação por parte do CORRETOR. Caso ocorra tal intervenção, o CONTRATANTE ficará obrigado a realizar o pagamento da comissão ora contratada.
-Cláusula 6ª. Todo trâmite concernente à transferência do imóvel para o novo comprador será de exclusiva responsabilidade do CONTRATANTE.
-DA PRESTAÇÃO DE SERVIÇO:
-Cláusula 7ª. O CORRETOR se compromete a realizar o trabalho de corretagem de forma criteriosa e com máxima honestidade, com o objetivo de promover a venda do imóvel supra descrito.
-DO COMPROMISSO:
-Cláusula 8ª. O CORRETOR, durante o tempo fixado, compromete-se a utilizar todos os meios necessários para concretizar a venda ou as negociações, respondendo por todos os gastos relacionados à oferta do imóvel. O CORRETOR não utilizará intermediários em quaisquer destas hipóteses. Em caso de intervenção de terceiros, o CORRETOR compromete-se a pagar a comissão acordada àquele que o mesmo autorizou a intermediar, seja de forma verbal ou expressa.
-DA COMISSÃO:
-Cláusula 9ª. Fica convencionada a comissão de ${commission}% (${commissionValue}), a ser calculada sobre o valor da venda mencionado neste contrato, se o intermediador ou apresentador do comprador for o CONTRATADO.
-Parágrafo Único. Se o comprador não for intermediado ou apresentado pelo CONTRATADO, fica convencionado o pagamento de ${exclusiveCommission}% (${exclusiveCommissionValue}), referente aos serviços de publicidade e divulgação do imóvel para venda e/ou intermediação do imóvel, independentemente de quem seja o negociador, caracterizando como comissão de Exclusividade.
-Cláusula 10ª. O pagamento da comissão será efetivado em dinheiro, no ato do recebimento do sinal, ou, caso não haja sinal, no ato do pagamento à vista ou da primeira parcela.
-DO VALOR:
-Cláusula 11ª. O CONTRATANTE oferece o imóvel pelo valor total de R$ ${propertyValue} (${propertyValueText}).
-Sendo que o CORRETOR poderá ofertá-lo pelo mesmo valor, o qual será pago à vista.
-Cláusula 12ª. Resta facultado ao CORRETOR negociar em condições diversas, desde que autorizado expressamente pelo CONTRATANTE. No entanto, é vedado ao CORRETOR oferecer o imóvel por valor menor.
-Cláusula 13ª. Caso o imóvel seja vendido ou negociado por preço superior ao citado, o CORRETOR receberá a mesma comissão de ${commission}% (${commissionValue}), calculada sobre o preço da venda.
-PRAZO:
-Cláusula 14ª. O CORRETOR terá o prazo de 365 (trezentos e sessenta e cinco) dias, contados a partir da data da assinatura deste contrato.
-Parágrafo Único. A renovação do contrato será automática se não houver manifestação das partes.
-Cláusula 15ª. Ultrapassando essa data, caso o CORRETOR não tenha o imóvel em seu cadastro para venda, ele terá direito a receber a comissão acordada, desde que a venda ocorra dentro de 90 (noventa) dias após a data final estipulada e que as negociações ainda estejam pendentes.
-Cláusula 16ª. O prazo para corretagem, acordado desde já, será automaticamente ampliado por mais 90 (noventa) dias, mesmo após a renovação, caso o CORRETOR inicie negociações concretas. O CORRETOR deverá comunicar previamente o início dessas negociações ao CONTRATANTE, que poderá unilateralmente impedir ações protelatórias do CORRETOR por meio de notificação por carta com aviso de recebimento.
-Cláusula 17ª. Fica vedada a venda ou abertura de negociações por parte do CORRETOR após o prazo acordado, exceto o exposto na cláusula anterior.
-Parágrafo primeiro. Após o prazo, obriga-se a devolver todos os documentos que estão em seu poder, juntamente com as chaves se tiver.
-Parágrafo Segundo. O CORRETOR não terá direito a qualquer indenização ou restituição de despesas se anunciar ou investir recursos financeiros após o prazo estabelecido, incluindo-se a ressalva da cláusula anterior.
-Parágrafo Terceiro. Entende-se por negociações todas as manifestações verbais ou expressas por parte do interessado.
-CONDIÇÕES GERAIS:
-Cláusula 18ª. O CORRETOR intermediará somente até a fase inicial da venda, sendo todos os outros trâmites de responsabilidade exclusiva e risco do CONTRATANTE.
-Cláusula 19ª. O presente contrato passará a vigorar entre as partes a partir da assinatura do mesmo.
-Cláusula 20ª. Todos os documentos mencionados acima fazem parte integrante deste contrato.
-DO FORO:
-Cláusula 21ª. Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de Terra Roxa, PR.
-Por estarem assim justos e contratados, firmam o presente instrumento em duas vias de igual teor, juntamente com 2 (duas) testemunhas.
-Terra Roxa, PR, ${signatureDate}
+CORRETOR DE IMÓVEIS (CONTRATADO):
+EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis, inscrito no CRECI sob o nº 44.628 - 6ª Região/PR, Avaliador de Imóveis inscrito no CNA 47.536 -DF, Perido Judicial Habilitado junto ao TJPR, RG nº 1.650.923-0 SSP/PR, CPF nº 557.095.409-00, residente e domiciliado na Rua Francisco Rodrigues de Souza, 148, Centro, CEP 85.990-000, Terra Roxa – PR.
+As partes acima identificadas celebram o presente Contrato de Prestação de Serviços de Corretagem Imobiliária com Exclusividade, que será regido pelas cláusulas e condições seguintes.
+CLÁUSULA 1ª – DO OBJETO
+O presente contrato tem por objeto a prestação de serviços de corretagem imobiliária pelo CONTRATADO para oferta, promoção e intermediação da venda do imóvel de propriedade do CONTRATANTE.
+CLÁUSULA 2ª – DO IMÓVEL
+O imóvel ${propertyType}, objeto deste contrato está localizado no endereço: ${propertyAddressFull}.
+CLÁUSULA 3ª – DA REGULARIZAÇÃO
+O imóvel será entregue livre e desembaraçado de quaisquer ônus ou pendências que possam impedir sua comercialização, com todos os documentos e certidões necessários à efetivação da transferência devidamente apresentados pelo CONTRATANTE.
+CLÁUSULA 4ª – DOS DOCUMENTOS
+Fazem parte integrante deste contrato todos os documentos e certidões exigíveis para a negociação e transferência do imóvel.
+CLÁUSULA 5ª – EXCLUSIVIDADE
+Durante a vigência deste contrato, o CONTRATANTE se compromete a não negociar, intermediar ou vender o imóvel diretamente ou por terceiros sem o intermédio do CORRETOR. Caso descumpra esta cláusula, deverá pagar a comissão integral prevista.
+CLÁUSULA 6ª – TRANSFERÊNCIA
+A responsabilidade pela transferência do imóvel ao comprador será exclusiva do CONTRATANTE, cabendo ao CORRETOR apenas a mediação da venda até sua formalização inicial.
+CLÁUSULA 7ª – DA INTERMEDIAÇÃO
+O CORRETOR compromete-se a atuar com diligência, ética e honestidade, utilizando todos os meios disponíveis para promover a venda do imóvel, inclusive com anúncios em sites, redes sociais, placas, atendimento a interessados e visitas ao imóvel.
+CLÁUSULA 8ª – CUSTOS
+Todos os custos relativos à divulgação, publicidade, visitas e manutenção de anúncios ficarão por conta do CORRETOR, sem direito a reembolso, exceto conforme previsto na cláusula de exclusividade.
+CLÁUSULA 9ª – COMISSÃO POR INTERMEDIAÇÃO
+Fica ajustado que, em caso de venda realizada por intermédio do CORRETOR, o mesmo fará jus a uma comissão de ${commission}% (${commissionValue}) sobre o valor total da transação, a ser paga no ato do sinal ou da primeira parcela.
+Parágrafo Único – Cláusula de Exclusividade
+Caso a venda ocorra diretamente pelo CONTRATANTE ou por terceiros, sem a intermediação do CORRETOR, durante a vigência do contrato ou sua prorrogação, será devida ao CORRETOR uma comissão de ${exclusiveCommission}% (${exclusiveCommissionValue}) sobre o valor da venda, a título de exclusividade, cobrindo os investimentos realizados em site, publicidade, divulgação e manutenção do imóvel em campanha ativa de venda.
+CLÁUSULA 10ª – PREÇO DO IMÓVEL
+O imóvel será ofertado pelo valor de R$ ${propertyValue}, (${propertyValueText}), salvo autorização expressa e por escrito do CONTRATANTE para negociação em condições diferentes.
+CLÁUSULA 11ª – VENDA POR PREÇO SUPERIOR
+Caso o imóvel venha a ser vendido por valor superior ao estipulado, a comissão será calculada sobre o valor efetivo da venda.
+CLÁUSULA 12ª – PRAZO CONTRATUAL
+O presente contrato terá vigência de 365 (trezentos e sessenta e cinco) dias, contados a partir da data de sua assinatura.
+Parágrafo Único – Renovação Automática
+O contrato será automaticamente prorrogado por igual período, caso não haja manifestação contrária de qualquer das partes, por escrito, com antecedência mínima de 30 (trinta) dias da data de término.
+CLÁUSULA 13ª – NEGOCIAÇÕES EM ANDAMENTO
+Caso a venda seja concluída até 90 (noventa) dias após o fim do contrato, com comprador que tenha tido contato prévio com o imóvel por ação do CORRETOR, a comissão de 3% será devida normalmente.
+CLÁUSULA 14ª – LIMITES DO CORRETOR
+O CORRETOR compromete-se a não utilizar intermediários, salvo mediante autorização expressa do CONTRATANTE. Em caso de uso de terceiros autorizados, a comissão poderá ser dividida entre os envolvidos, conforme acordo entre os corretores.
+CLÁUSULA 15ª – DO ENCERRAMENTO
+Encerrado o prazo contratual sem renovação, o CORRETOR deverá devolver todos os documentos e chaves eventualmente recebidos do CONTRATANTE.
+CLÁUSULA 16ª – INDENIZAÇÕES
+O CORRETOR não terá direito a reembolso ou indenização por despesas realizadas após o término da vigência contratual.
+CLÁUSULA 17ª – AUTORIZAÇÃO PARA USO DE IMAGEM DO IMÓVEL
+O CONTRATANTE autoriza expressamente o CORRETOR a fotografar, filmar e divulgar imagens do imóvel objeto deste contrato em sites de anúncios imobiliários, redes sociais, plataformas digitais, materiais publicitários impressos ou eletrônicos, com a finalidade exclusiva de promover a venda do bem. Essa autorização é concedida de forma gratuita, por prazo indeterminado, enquanto durar a campanha de venda, e abrange o uso total ou parcial das imagens, sem identificação pessoal do CONTRATANTE, resguardando sua privacidade.
+CLÁUSULA 18ª – DO FORO
+Para dirimir quaisquer dúvidas ou controvérsias oriundas do presente contrato, fica eleito o Foro da Comarca de Terra Roxa – PR, com renúncia expressa de qualquer outro, por mais privilegiado que seja.
+Terra Roxa – PR, ${signatureDate}.
+CONTRATANTE:
 
 
 ________________________________________
-Contratante: ${ownerName}             Corretor:  EDSON VIANA ESMECELATO
+Nome: ${ownerName}
+CORRETOR:
 
-_______________________________________
-Testemunha 1                                                             Testemunha 2
 
-        `;
+________________________________________
+EDSON VIANA ESMECELATO – CRECI 44.628
+TESTEMUNHAS:
+1.	Nome: _______________________ – CPF: ___________________
+
+2.	Nome: _______________________ – CPF: ___________________
+
+   `;
 //////////////////
 // Defina os estilos inline para o contrato, incluindo margens superior e inferior
 const contractWithStyles = `
