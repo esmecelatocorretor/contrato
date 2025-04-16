@@ -46,7 +46,7 @@ O imóvel ${propertyType}, objeto deste contrato está localizado no endereço: 
 CLÁUSULA 3ª – DA REGULARIZAÇÃO
 O imóvel será entregue livre e desembaraçado de quaisquer ônus ou pendências que possam impedir sua comercialização, com todos os documentos e certidões necessários à efetivação da transferência devidamente apresentados pelo CONTRATANTE.
 CLÁUSULA 4ª – DOS DOCUMENTOS
-Fazem parte integrante deste contrato todos os documentos e certidões exigíveis para a negociação e transferência do imóvel.
+Farão parte integrante deste contrato todos os documentos e certidões exigíveis para a negociação e transferência do imóvel.
 CLÁUSULA 5ª – EXCLUSIVIDADE
 Durante a vigência deste contrato, o CONTRATANTE se compromete a não negociar, intermediar ou vender o imóvel diretamente ou por terceiros sem o intermédio do CORRETOR. Caso descumpra esta cláusula, deverá pagar a comissão convencionada de 1,00% (um  por cento) prevista, no Parágrafo Único da CLÁUSULA 9ª.
 CLÁUSULA 6ª – TRANSFERÊNCIA
