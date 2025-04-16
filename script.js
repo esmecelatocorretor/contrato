@@ -28,13 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const contractText = `    
 CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE
 IDENTIFICAÇÃO DAS PARTES:
-CONTRATANTE e Ou Proprietário do Imóvel: ${ownerName}
-Nacionalidade: ${nationality}
-Estado Civil: ${maritalStatus}
-Profissão: ${occupation}
-Número do RG: ${rgNumber}
-Número do CPF: ${cpfNumber}
-Endereço Completo do Proprietário: ${ownerPropertyAddress}
+CONTRATANTE e Ou Proprietário do Imóvel: ${ownerName}, Nacionalidade: ${nationality}, Estado Civil: ${maritalStatus}, Profissão: ${occupation}, Número do RG: ${rgNumber}, Número do CPF: ${cpfNumber}, Endereço Completo do Proprietário: ${ownerPropertyAddress}.
 
 CORRETOR: EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis – CRECI 44.628/PR, CNAI 47.536/DF, RG 1.650.923-0 SSP/PR, CPF 557.095.409-00, residente em Terra Roxa – PR.
 
@@ -58,7 +52,7 @@ CLÁUSULA 8. Custos de Divulgação: Correrão por conta do CORRETOR, sem reembo
 
 CLÁUSULA 9. Comissão: Será de ${commission}% (${commissionValue})sobre o valor da venda. Se a venda for feita sem o CORRETOR, durante a vigência do contrato, este terá direito a ${exclusiveCommission}% (${exclusiveCommissionValue}) pela exclusividade.
 
-CLÁUSULA CLÁUSULA 10. Preço: O valor inicial de venda será de R$ ${propertyValue}, (${propertyValueText}), definido pelo CONTRATANTE. Qualquer alteração exigirá autorização expressa.
+CLÁUSULA 10. Preço: O valor inicial de venda será de R$ ${propertyValue}, (${propertyValueText}), definido pelo CONTRATANTE. Qualquer alteração exigirá autorização expressa.
 
 CLÁUSULA 11. Venda por valor superior: A comissão será calculada sobre o valor final da venda.
 
@@ -68,7 +62,7 @@ CLÁUSULA 13. Negociações em andamento: Se a venda ocorrer até 90 dias após 
 
 CLÁUSULA 14. Intermediários: Vedado o uso de terceiros sem autorização. Havendo, a comissão poderá ser dividida.
 
-CLÁUSULA 15. Encerramento: O CORRETOR deverá devolver final do contrato os documentos e chaves que lhes foram entregue.
+CLÁUSULA 15. Encerramento: O CORRETOR deverá devolver final do contrato os documentos e chaves que lhes foram entregues.
 
 CLÁUSULA 16. Despesas após vigência: Não serão reembolsadas.
 
