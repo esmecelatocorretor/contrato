@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gerador de Contrato</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.7.0/docx.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.0.2/docx.umd.min.js"></script>
 </head>
 <body>
     <h2>Formulário do Contrato</h2>
@@ -61,8 +61,9 @@
                 const propertyValueText = document.getElementById('propertyValueText').value;
                 const signatureDate = document.getElementById('signatureDate').value;
 
-                const contractText = `    
+                const contractText = `
 CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE
+
 IDENTIFICAÇÃO DAS PARTES:
 CONTRATANTE e Ou Proprietário do Imóvel: ${ownerName}, Nacionalidade: ${nationality}, Estado Civil: ${maritalStatus}, Profissão: ${occupation}, Número do RG: ${rgNumber}, Número do CPF: ${cpfNumber}, Endereço Completo do Proprietário: ${ownerPropertyAddress}.
 
@@ -116,39 +117,24 @@ EDSON VIANA ESMECELATO – CRECI 44.628 PR
 
 Testemunhas:
 _______________________________________ – CPF: ___________________
-_______________________________________ – CPF: ___________________`;
-
+_______________________________________ – CPF: ___________________
+                `;
                 generatedContract.innerText = contractText;
             }
 
             document.getElementById("generateDocx").addEventListener("click", async function () {
-                const { Document, Packer, Paragraph, TextRun, AlignmentType, PageOrientation } = window.docx;
+                const { Document, Packer, Paragraph, TextRun, AlignmentType } = window.docx;
 
-                const contractText = document.getElementById('generatedContract').innerText.split('\n');
-
-                const paragraphs = contractText.map(line =>
-                    new Paragraph({
-                        children: [new TextRun({ text: line.trim(), font: "Arial", size: 24 })],
-                        alignment: AlignmentType.JUSTIFIED,
-                        spacing: { line: 360 }
-                    })
-                );
+                const contractLines = document.getElementById('generatedContract').innerText.split('\n');
+                const paragraphs = contractLines.map(line => new Paragraph({
+                    children: [new TextRun({ text: line.trim(), font: "Arial", size: 24 })],
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { line: 360 }
+                }));
 
                 const doc = new Document({
                     sections: [{
-                        properties: {
-                            page: {
-                                margin: {
-                                    top: 1700,
-                                    right: 1134,
-                                    bottom: 1134,
-                                    left: 1700,
-                                },
-                                size: {
-                                    orientation: PageOrientation.PORTRAIT,
-                                },
-                            },
-                        },
+                        properties: {},
                         children: paragraphs
                     }]
                 });
@@ -158,7 +144,9 @@ _______________________________________ – CPF: ___________________`;
                 const link = document.createElement('a');
                 link.href = url;
                 link.download = "Contrato_Corretagem_ABNT.docx";
+                document.body.appendChild(link);
                 link.click();
+                document.body.removeChild(link);
             });
         });
     </script>
