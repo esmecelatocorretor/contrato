@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gerador de Contrato</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.0.2/docx.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.7.0/docx.umd.js"></script>
 </head>
 <body>
     <h2>Formulário do Contrato</h2>
