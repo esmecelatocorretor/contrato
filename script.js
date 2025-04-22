@@ -34,11 +34,11 @@ CORRETOR: EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis – C
 
 As partes firmam o presente contrato de corretagem com exclusividade, regido pelas cláusulas seguintes:
 
-CLÁUSULA 1. Objeto: Intermediação da venda do imóvel descrito na Cláusula 2, por parte do CORRETOR.
+CLÁUSULA 1. Objeto: Constitui objeto deste contrato a prestação de serviços de intermediação para venda do imóvel descrito na Cláusula 2, por parte do CORRETOR, com exclusividade.
 
 CLÁUSULA 2. Imóvel: ${propertyType}, objeto deste contrato está localizado no endereço: ${propertyAddressFull}.
 
-CLÁUSULA 3. Regularização: O imóvel será entregue livre de ônus, com toda documentação necessária fornecida pelo CONTRATANTE.
+CLÁUSULA 3. Regularização: O imóvel será entregue livre e desembaraçado de quaisquer ônus, com toda a documentação necessária fornecida pelo CONTRATANTE.
 
 CLÁUSULA 4. Documentos: Integrarão este contrato todos os documentos e certidões exigidos para a venda.
 
@@ -50,7 +50,7 @@ CLÁUSULA 7. Atuação do Corretor: O CORRETOR se compromete a divulgar o imóve
 
 CLÁUSULA 8. Custos de Divulgação: Correrão por conta do CORRETOR, sem reembolso.
 
-CLÁUSULA 9. Comissão: Será de ${commission}% (${commissionValue})sobre o valor da venda. Se a venda for feita sem o CORRETOR, durante a vigência do contrato, este terá direito a ${exclusiveCommission}% (${exclusiveCommissionValue}) pela exclusividade.
+CLÁUSULA 9. Comissão: Será de ${commission}% (${commissionValue})sobre o valor da venda. Se a venda for realizada sem a intermediação do CORRETOR, durante a vigência deste contrato, este fará jus a ${exclusiveCommission}% (${exclusiveCommissionValue}) em razão da exclusividade.
 
 CLÁUSULA 10. Preço: O valor inicial de venda será de R$ ${propertyValue}, (${propertyValueText}), definido pelo CONTRATANTE. Qualquer alteração exigirá autorização expressa.
 
@@ -66,7 +66,7 @@ CLÁUSULA 15. Encerramento: O CORRETOR deverá devolver final do contrato os doc
 
 CLÁUSULA 16. Despesas após vigência: Não serão reembolsadas.
 
-CLÁUSULA 17. Uso de Imagem: O CONTRATANTE autoriza o uso de imagens do imóvel para divulgação, sem identificação pessoal.
+CLÁUSULA 17. Uso de Imagem: O CONTRATANTE autoriza, de forma gratuita e por prazo indeterminado, a utilização de imagens e vídeos do imóvel para fins de divulgação comercial, vedado o uso de dados pessoais.
 
 CLÁUSULA 18. Foro: Fica eleito o foro de Terra Roxa – PR para dirimir eventuais questões.
 
