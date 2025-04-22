@@ -1,154 +1,101 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Gerador de Contrato</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.0.2/docx.umd.min.js"></script>
-</head>
-<body>
-    <h2>Formulário do Contrato</h2>
-    <form id="contractGenerator">
-        <label>Nome do Proprietário: <input type="text" id="ownerName" required></label><br>
-        <label>Nacionalidade: <input type="text" id="nationality" required></label><br>
-        <label>Estado Civil: <input type="text" id="maritalStatus" required></label><br>
-        <label>Profissão: <input type="text" id="occupation" required></label><br>
-        <label>RG: <input type="text" id="rgNumber" required></label><br>
-        <label>CPF: <input type="text" id="cpfNumber" required></label><br>
-        <label>Endereço Proprietário: <input type="text" id="propertyAddressFull" required></label><br>
-        <label>Tipo de Imóvel: <input type="text" id="propertyType" required></label><br>
-        <label>Endereço do Imóvel: <input type="text" id="propertyAddressFullImovel" required></label><br>
-        <label>Comissão (%): <input type="text" id="commission" required></label><br>
-        <label>Valor da Comissão: <input type="text" id="commissionValue" required></label><br>
-        <label>Comissão Exclusiva (%): <input type="text" id="exclusiveCommission" required></label><br>
-        <label>Valor da Comissão Exclusiva: <input type="text" id="exclusiveCommissionValue" required></label><br>
-        <label>Valor do Imóvel: <input type="text" id="propertyValue" required></label><br>
-        <label>Valor do Imóvel por extenso: <input type="text" id="propertyValueText" required></label><br>
-        <label>Data da Assinatura: <input type="text" id="signatureDate" required></label><br>
-        <button type="submit">Gerar Contrato</button>
-    </form>
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
-    <hr>
-    <h2>Contrato Gerado</h2>
-    <div id="generatedContract" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 15px;"></div>
+def adicionar_paragrafo_formatado(documento, texto):
+    paragrafo = documento.add_paragraph()
+    run = paragrafo.add_run(texto)
+    run.font.name = 'Arial'
+    run.font.size = Pt(12)
+    paragrafo.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+    paragrafo.paragraph_format.line_spacing = 1.5
 
-    <button id="generateDocx">Baixar Contrato Word (ABNT)</button>
+# ==== INPUT MANUAL (pode substituir por input() se desejar digitar) ====
+ownerName = "João da Silva"
+nationality = "Brasileiro"
+maritalStatus = "Casado"
+occupation = "Engenheiro"
+rgNumber = "1.234.567-8"
+cpfNumber = "123.456.789-00"
+ownerPropertyAddress = "Rua das Palmeiras, 123, Centro, Terra Roxa - PR"
+propertyType = "Casa residencial"
+propertyAddressFull = "Av. Brasil, 456, Terra Roxa - PR"
+commission = "6"
+commissionValue = "R$ 30.000,00"
+exclusiveCommission = "3"
+exclusiveCommissionValue = "R$ 15.000,00"
+propertyValue = "500.000,00"
+propertyValueText = "quinhentos mil reais"
+signatureDate = "22 de abril de 2025"
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contractGenerator');
-            const generatedContract = document.getElementById('generatedContract');
+# ==== CONTRATO ====
+document = Document()
+adicionar_paragrafo_formatado(document, "CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE")
+document.add_paragraph()  # Espaço
 
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                generateContract();
-            });
+adicionar_paragrafo_formatado(document, f"IDENTIFICAÇÃO DAS PARTES:\nCONTRATANTE e/ou Proprietário do Imóvel: {ownerName}, "
+    f"Nacionalidade: {nationality}, Estado Civil: {maritalStatus}, Profissão: {occupation}, Número do RG: {rgNumber}, "
+    f"Número do CPF: {cpfNumber}, Endereço Completo do Proprietário: {ownerPropertyAddress}.")
 
-            function generateContract() {
-                const ownerName = document.getElementById('ownerName').value;
-                const nationality = document.getElementById('nationality').value;
-                const maritalStatus = document.getElementById('maritalStatus').value;
-                const occupation = document.getElementById('occupation').value;
-                const rgNumber = document.getElementById('rgNumber').value;
-                const cpfNumber = document.getElementById('cpfNumber').value;
-                const ownerPropertyAddress = document.getElementById('propertyAddressFull').value;
-                const propertyType = document.getElementById('propertyType').value;
-                const propertyAddressFull = document.getElementById('propertyAddressFullImovel').value;
-                const commission = document.getElementById('commission').value;
-                const commissionValue = document.getElementById('commissionValue').value;
-                const exclusiveCommission = document.getElementById('exclusiveCommission').value;
-                const exclusiveCommissionValue = document.getElementById('exclusiveCommissionValue').value;
-                const propertyValue = document.getElementById('propertyValue').value;
-                const propertyValueText = document.getElementById('propertyValueText').value;
-                const signatureDate = document.getElementById('signatureDate').value;
+adicionar_paragrafo_formatado(document, "CORRETOR: EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis – "
+    "CRECI 44.628/PR, CNAI 47.536/DF, RG 1.650.923-0 SSP/PR, CPF 557.095.409-00, residente em Terra Roxa – PR.")
 
-                const contractText = `
-CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CORRETAGEM IMOBILIÁRIA - COM EXCLUSIVIDADE
+adicionar_paragrafo_formatado(document, "As partes firmam o presente contrato de corretagem com exclusividade, regido pelas cláusulas seguintes:")
 
-IDENTIFICAÇÃO DAS PARTES:
-CONTRATANTE e Ou Proprietário do Imóvel: ${ownerName}, Nacionalidade: ${nationality}, Estado Civil: ${maritalStatus}, Profissão: ${occupation}, Número do RG: ${rgNumber}, Número do CPF: ${cpfNumber}, Endereço Completo do Proprietário: ${ownerPropertyAddress}.
+adicionar_paragrafo_formatado(document, f"CLÁUSULA 1. Objeto: Constitui objeto deste contrato a prestação de serviços de intermediação para "
+    f"venda do imóvel descrito na Cláusula 2, por parte do CORRETOR, com exclusividade.")
 
-CORRETOR: EDSON VIANA ESMECELATO, brasileiro, casado, Corretor de Imóveis – CRECI 44.628/PR, CNAI 47.536/DF, RG 1.650.923-0 SSP/PR, CPF 557.095.409-00, residente em Terra Roxa – PR.
+adicionar_paragrafo_formatado(document, f"CLÁUSULA 2. Imóvel: {propertyType}, localizado no endereço: {propertyAddressFull}.")
 
-As partes firmam o presente contrato de corretagem com exclusividade, regido pelas cláusulas seguintes:
+adicionar_paragrafo_formatado(document, "CLÁUSULA 3. Regularização: O imóvel será entregue livre e desembaraçado de quaisquer ônus, "
+    "com toda a documentação necessária fornecida pelo CONTRATANTE.")
 
-CLÁUSULA 1. Objeto: Constitui objeto deste contrato a prestação de serviços de intermediação para venda do imóvel descrito na Cláusula 2, por parte do CORRETOR, com exclusividade.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 4. Documentos: Integrarão este contrato todos os documentos e certidões exigidos para a venda.")
 
-CLÁUSULA 2. Imóvel: ${propertyType}, objeto deste contrato está localizado no endereço: ${propertyAddressFull}.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 5. Exclusividade: O CONTRATANTE se compromete a não negociar o imóvel por conta própria ou por terceiros. "
+    "Em caso de descumprimento, pagará 1% (um por cento) do valor da venda ao CORRETOR, conforme CLÁUSULA 9.")
 
-CLÁUSULA 3. Regularização: O imóvel será entregue livre e desembaraçado de quaisquer ônus, com toda a documentação necessária fornecida pelo CONTRATANTE.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 6. Transferência: Responsabilidade do CONTRATANTE. O CORRETOR atua apenas na mediação.")
 
-CLÁUSULA 4. Documentos: Integrarão este contrato todos os documentos e certidões exigidos para a venda.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 7. Atuação do Corretor: O CORRETOR se compromete a divulgar o imóvel e atender interessados com ética e empenho.")
 
-CLÁUSULA 5. Exclusividade: O CONTRATANTE se compromete a não negociar o imóvel por conta própria ou por terceiros. Em caso de descumprimento, pagará 1% (um por cento) do valor da venda ao CORRETOR, constante na CLÁUSULA 9.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 8. Custos de Divulgação: Correrão por conta do CORRETOR, sem reembolso.")
 
-CLÁUSULA 6. Transferência: Responsabilidade do CONTRATANTE. O CORRETOR atua apenas na mediação.
+adicionar_paragrafo_formatado(document, f"CLÁUSULA 9. Comissão: Será de {commission}% ({commissionValue}) sobre o valor da venda. "
+    f"Se a venda for realizada sem a intermediação do CORRETOR, durante a vigência deste contrato, este fará jus a {exclusiveCommission}% "
+    f"({exclusiveCommissionValue}) em razão da exclusividade.")
 
-CLÁUSULA 7. Atuação do Corretor: O CORRETOR se compromete a divulgar o imóvel e atender interessados com ética e empenho.
+adicionar_paragrafo_formatado(document, f"CLÁUSULA 10. Preço: O valor inicial de venda será de R$ {propertyValue}, ({propertyValueText}), "
+    "definido pelo CONTRATANTE. Qualquer alteração exigirá autorização expressa.")
 
-CLÁUSULA 8. Custos de Divulgação: Correrão por conta do CORRETOR, sem reembolso.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 11. Venda por valor superior: A comissão será calculada sobre o valor final da venda.")
 
-CLÁUSULA 9. Comissão: Será de ${commission}% (${commissionValue}) sobre o valor da venda. Se a venda for realizada sem a intermediação do CORRETOR, durante a vigência deste contrato, este fará jus a ${exclusiveCommission}% (${exclusiveCommissionValue}) em razão da exclusividade.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 12. Prazo: Vigência de 365 dias a partir da assinatura, com renovação automática por igual período, salvo manifestação prévia por escrito.")
 
-CLÁUSULA 10. Preço: O valor inicial de venda será de R$ ${propertyValue}, (${propertyValueText}), definido pelo CONTRATANTE. Qualquer alteração exigirá autorização expressa.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 13. Negociações em andamento: Se a venda ocorrer até 90 dias após o término do contrato, com comprador captado pelo CORRETOR, a comissão será devida.")
 
-CLÁUSULA 11. Venda por valor superior: A comissão será calculada sobre o valor final da venda.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 14. Intermediários: Vedado o uso de terceiros sem autorização. Havendo, a comissão poderá ser dividida.")
 
-CLÁUSULA 12. Prazo: Vigência de 365 dias a partir da assinatura, com renovação automática por igual período, salvo manifestação prévia por escrito.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 15. Encerramento: O CORRETOR deverá devolver ao final do contrato os documentos e chaves que lhes foram entregues.")
 
-CLÁUSULA 13. Negociações em andamento: Se a venda ocorrer até 90 dias após o término do contrato, com comprador captado pelo CORRETOR, a comissão será devida.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 16. Despesas após vigência: Não serão reembolsadas.")
 
-CLÁUSULA 14. Intermediários: Vedado o uso de terceiros sem autorização. Havendo, a comissão poderá ser dividida.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 17. Uso de Imagem: O CONTRATANTE autoriza, de forma gratuita e por prazo indeterminado, a utilização de imagens e vídeos do imóvel para fins de divulgação comercial, vedado o uso de dados pessoais.")
 
-CLÁUSULA 15. Encerramento: O CORRETOR deverá devolver final do contrato os documentos e chaves que lhes foram entregues.
+adicionar_paragrafo_formatado(document, "CLÁUSULA 18. Foro: Fica eleito o foro de Terra Roxa – PR para dirimir eventuais questões.")
 
-CLÁUSULA 16. Despesas após vigência: Não serão reembolsadas.
+document.add_paragraph()
+adicionar_paragrafo_formatado(document, f"Terra Roxa – PR, {signatureDate}.")
 
-CLÁUSULA 17. Uso de Imagem: O CONTRATANTE autoriza, de forma gratuita e por prazo indeterminado, a utilização de imagens e vídeos do imóvel para fins de divulgação comercial, vedado o uso de dados pessoais.
+document.add_paragraph()
+adicionar_paragrafo_formatado(document, f"CONTRATANTE:\nNome: {ownerName}")
+adicionar_paragrafo_formatado(document, "CORRETOR:\nEDSON VIANA ESMECELATO – CRECI 44.628 PR")
 
-CLÁUSULA 18. Foro: Fica eleito o foro de Terra Roxa – PR para dirimir eventuais questões.
+document.add_paragraph()
+adicionar_paragrafo_formatado(document, "Testemunhas:\n_______________________________________ – CPF: ___________________")
+adicionar_paragrafo_formatado(document, "_______________________________________ – CPF: ___________________")
 
-Terra Roxa – PR, ${signatureDate}.
-
-CONTRATANTE:
-Nome: ${ownerName}
-
-CORRETOR:
-EDSON VIANA ESMECELATO – CRECI 44.628 PR
-
-Testemunhas:
-_______________________________________ – CPF: ___________________
-_______________________________________ – CPF: ___________________
-                `;
-                generatedContract.innerText = contractText;
-            }
-
-            document.getElementById("generateDocx").addEventListener("click", async function () {
-                const { Document, Packer, Paragraph, TextRun, AlignmentType } = window.docx;
-
-                const contractLines = document.getElementById('generatedContract').innerText.split('\n');
-                const paragraphs = contractLines.map(line => new Paragraph({
-                    children: [new TextRun({ text: line.trim(), font: "Arial", size: 24 })],
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { line: 360 }
-                }));
-
-                const doc = new Document({
-                    sections: [{
-                        properties: {},
-                        children: paragraphs
-                    }]
-                });
-
-                const blob = await Packer.toBlob(doc);
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = "Contrato_Corretagem_ABNT.docx";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
-        });
-    </script>
-</body>
-</html>
+# ==== SALVAR ====
+nome_arquivo = f"Contrato_{ownerName.replace(' ', '_')}.docx"
+document.save(nome_arquivo)
+print(f"Contrato salvo como: {nome_arquivo}")
